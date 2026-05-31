@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PULSA — Payment Understanding & Ledger for Smart Analytics</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>PULSA — AI Financial Intelligence untuk UMKM Berbasis Data Transaksi</title>
+  <link rel="stylesheet" href="styles.css?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -25,28 +25,28 @@
           </div>
           <h1>PULSA</h1>
         </div>
-        <h2>Kelola & Pahami<br>Transaksi Bisnis Anda</h2>
-        <p>Platform analitik transaksi untuk UMKM Indonesia. Ubah data pembayaran menjadi insight bisnis yang actionable.</p>
+        <h2>AI Financial Intelligence<br>untuk UMKM</h2>
+        <p>Ubah data transaksi Anda menjadi insight bisnis yang actionable. Konsolidasi multi-channel, skor kesehatan usaha, dan rekomendasi AI dalam satu platform.</p>
         <div class="login-features">
           <div class="login-feature">
             <span class="feature-icon">&#9679;</span>
-            <span>Multi-channel: QRIS, POS, Marketplace</span>
+            <span>Multi-channel: QRIS, POS, Marketplace, Transfer, Manual</span>
           </div>
           <div class="login-feature">
             <span class="feature-icon">&#9679;</span>
-            <span>Business Health Score real-time</span>
+            <span>Business Health Score 5 komponen</span>
           </div>
           <div class="login-feature">
             <span class="feature-icon">&#9679;</span>
-            <span>AI-powered recommendations</span>
+            <span>Rekomendasi AI berbasis pola transaksi</span>
           </div>
         </div>
       </div>
       <div class="login-right">
         <div class="login-form-container">
           <h3>Masuk ke akun Anda</h3>
-          <p class="login-subtitle">Masukkan email dan password untuk melanjutkan</p>
-          <form id="loginForm" onsubmit="handleLogin(event)">
+          <p class="login-subtitle">Demo terisi otomatis — klik Masuk untuk lanjut</p>
+          <form id="loginForm">
             <div class="form-group">
               <label for="email">Email</label>
               <input type="email" id="email" placeholder="nama@bisnis.com" value="demo@pulsa.id" required>
@@ -63,7 +63,7 @@
             </div>
             <button type="submit" class="btn btn-primary btn-full">Masuk</button>
           </form>
-          <p class="register-link">Belum punya akun? <a href="#" onclick="showPage('page-register')">Daftar sekarang</a></p>
+          <p class="register-link">Belum punya akun? <a href="#" id="linkToRegister">Daftar sekarang</a></p>
         </div>
       </div>
     </div>
@@ -79,39 +79,23 @@
               <rect width="40" height="40" rx="10" fill="#4F46E5"/>
               <path d="M12 14h6c2.2 0 4 1.8 4 4s-1.8 4-4 4h-6v-8zm2 2v4h4c1.1 0 2-.9 2-2s-.9-2-2-2h-4z" fill="white"/>
               <circle cx="26" cy="26" r="4" fill="#10B981"/>
-              <path d="M24.5 26l1 1 2-2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <h1>PULSA</h1>
         </div>
         <h2>Mulai Perjalanan<br>Analitik Bisnis Anda</h2>
-        <p>Bergabung dengan ribuan UMKM Indonesia yang sudah menggunakan PULSA untuk memahami bisnis mereka lebih baik.</p>
+        <p>Bergabung dengan UMKM yang sudah memanfaatkan data transaksi untuk mengambil keputusan bisnis yang lebih tepat.</p>
       </div>
       <div class="login-right">
         <div class="login-form-container">
           <h3>Buat akun baru</h3>
           <p class="login-subtitle">Isi data berikut untuk mendaftar</p>
-          <form onsubmit="handleLogin(event)">
-            <div class="form-group">
-              <label>Nama lengkap</label>
-              <input type="text" placeholder="Nama Anda" required>
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="nama@bisnis.com" required>
-            </div>
-            <div class="form-group">
-              <label>No. Telepon</label>
-              <input type="tel" placeholder="08xxxxxxxxxx">
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="password" placeholder="Min. 8 karakter" required>
-            </div>
-            <div class="form-group">
-              <label>Nama bisnis</label>
-              <input type="text" placeholder="Nama usaha Anda" required>
-            </div>
+          <form id="registerForm">
+            <div class="form-group"><label>Nama lengkap</label><input type="text" placeholder="Nama Anda" required></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="nama@bisnis.com" required></div>
+            <div class="form-group"><label>No. Telepon</label><input type="tel" placeholder="08xxxxxxxxxx"></div>
+            <div class="form-group"><label>Password</label><input type="password" placeholder="Min. 8 karakter" required></div>
+            <div class="form-group"><label>Nama bisnis</label><input type="text" placeholder="Nama usaha Anda" required></div>
             <div class="form-group">
               <label>Kategori bisnis</label>
               <select required>
@@ -125,7 +109,7 @@
             </div>
             <button type="submit" class="btn btn-primary btn-full">Daftar</button>
           </form>
-          <p class="register-link">Sudah punya akun? <a href="#" onclick="showPage('page-login')">Masuk</a></p>
+          <p class="register-link">Sudah punya akun? <a href="#" id="linkToLogin">Masuk</a></p>
         </div>
       </div>
     </div>
@@ -145,27 +129,27 @@
         </div>
 
         <nav class="sidebar-nav">
-          <a href="#" class="nav-item active" onclick="showSection('dashboard', this)">
+          <a href="#" class="nav-item active" data-section="dashboard">
             <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
             <span>Dashboard</span>
           </a>
-          <a href="#" class="nav-item" onclick="showSection('transactions', this)">
+          <a href="#" class="nav-item" data-section="transactions">
             <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"/></svg>
             <span>Transaksi</span>
           </a>
-          <a href="#" class="nav-item" onclick="showSection('analytics', this)">
+          <a href="#" class="nav-item" data-section="analytics">
             <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zm6-4a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zm6-3a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
             <span>Analytics</span>
           </a>
-          <a href="#" class="nav-item" onclick="showSection('health-score', this)">
+          <a href="#" class="nav-item" data-section="health-score">
             <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/></svg>
             <span>Health Score</span>
           </a>
-          <a href="#" class="nav-item" onclick="showSection('recommendations', this)">
+          <a href="#" class="nav-item" data-section="recommendations">
             <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
             <span>Rekomendasi AI</span>
           </a>
-          <a href="#" class="nav-item" onclick="showSection('ingestion', this)">
+          <a href="#" class="nav-item" data-section="ingestion">
             <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
             <span>Import Data</span>
           </a>
@@ -179,7 +163,7 @@
               <span class="user-role">Owner</span>
             </div>
           </div>
-          <a href="#" class="nav-item" onclick="showPage('page-login')">
+          <a href="#" class="nav-item" id="logoutBtn">
             <svg viewBox="0 0 20 20" fill="currentColor" width="20"><path fill-rule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1H3zm7.707 7.707a1 1 0 01-1.414 0L7.586 9H13a1 1 0 100-2H7.586l1.707-1.707a1 1 0 00-1.414-1.414l-3.5 3.5a1 1 0 000 1.414l3.5 3.5a1 1 0 001.414-1.414z" clip-rule="evenodd"/></svg>
             <span>Keluar</span>
           </a>
@@ -197,14 +181,14 @@
           </div>
           <div class="topbar-right">
             <div class="date-filter">
-              <select id="dateRange" onchange="updateDateRange()">
+              <select id="dateRange">
                 <option value="7d">7 hari terakhir</option>
                 <option value="30d" selected>30 hari terakhir</option>
                 <option value="90d">90 hari terakhir</option>
                 <option value="1y">1 tahun</option>
               </select>
             </div>
-            <button class="btn btn-outline btn-sm" onclick="showSection('ingestion', document.querySelector('.nav-item:last-of-type'))">
+            <button class="btn btn-outline btn-sm" id="topImportBtn">
               <svg viewBox="0 0 16 16" fill="currentColor" width="14"><path d="M8 2a.75.75 0 01.75.75v4.5h4.5a.75.75 0 010 1.5h-4.5v4.5a.75.75 0 01-1.5 0v-4.5h-4.5a.75.75 0 010-1.5h4.5v-4.5A.75.75 0 018 2z"/></svg>
               Import
             </button>
@@ -214,39 +198,42 @@
         <!-- ===== DASHBOARD SECTION ===== -->
         <section id="section-dashboard" class="content-section active">
 
+          <!-- Goal Banner -->
+          <div class="goal-banner" id="goalBanner">
+            <div class="goal-info">
+              <span class="goal-icon">🎯</span>
+              <div class="goal-text">
+                <span class="goal-label">Target Anda</span>
+                <span class="goal-value" id="goalValue">Belum disetel</span>
+                <div class="goal-progress" id="goalProgress"></div>
+              </div>
+            </div>
+            <button class="btn btn-outline btn-sm" id="setGoalBtn">
+              <span id="setGoalBtnText">Setel Target</span>
+            </button>
+          </div>
+
           <!-- KPI Cards -->
           <div class="kpi-grid">
             <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-label">Total Revenue</span>
-                <span class="kpi-badge up">+12.5%</span>
-              </div>
-              <div class="kpi-value">Rp 15.750.000</div>
-              <div class="kpi-sub">vs Rp 14.000.000 bulan lalu</div>
+              <div class="kpi-header"><span class="kpi-label">Total Revenue</span><span class="kpi-badge up" id="kpiRevenueDelta">—</span></div>
+              <div class="kpi-value" id="kpiRevenue">—</div>
+              <div class="kpi-sub" id="kpiRevenueSub">—</div>
             </div>
             <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-label">Total Transaksi</span>
-                <span class="kpi-badge up">+8.2%</span>
-              </div>
-              <div class="kpi-value">420</div>
-              <div class="kpi-sub">vs 388 bulan lalu</div>
+              <div class="kpi-header"><span class="kpi-label">Total Transaksi</span><span class="kpi-badge up" id="kpiTxCountDelta">—</span></div>
+              <div class="kpi-value" id="kpiTxCount">—</div>
+              <div class="kpi-sub" id="kpiTxCountSub">—</div>
             </div>
             <div class="kpi-card">
-              <div class="kpi-header">
-                <span class="kpi-label">Rata-rata Transaksi</span>
-                <span class="kpi-badge up">+3.9%</span>
-              </div>
-              <div class="kpi-value">Rp 37.500</div>
-              <div class="kpi-sub">vs Rp 36.082 bulan lalu</div>
+              <div class="kpi-header"><span class="kpi-label">Rata-rata Transaksi</span><span class="kpi-badge up" id="kpiAvgTxDelta">—</span></div>
+              <div class="kpi-value" id="kpiAvgTx">—</div>
+              <div class="kpi-sub" id="kpiAvgTxSub">—</div>
             </div>
             <div class="kpi-card kpi-health">
-              <div class="kpi-header">
-                <span class="kpi-label">Health Score</span>
-                <span class="kpi-badge neutral">B+</span>
-              </div>
-              <div class="kpi-value">78.5</div>
-              <div class="kpi-sub">dari 100 &mdash; Baik</div>
+              <div class="kpi-header"><span class="kpi-label">Health Score</span><span class="kpi-badge neutral" id="kpiHealthGrade">—</span></div>
+              <div class="kpi-value" id="kpiHealth">—</div>
+              <div class="kpi-sub" id="kpiHealthSub">—</div>
             </div>
           </div>
 
@@ -254,56 +241,29 @@
           <div class="charts-row">
             <div class="card chart-card wide">
               <div class="card-header">
-                <h3>Tren Revenue (30 Hari)</h3>
+                <h3 id="trendChartTitle">Tren Revenue (30 Hari)</h3>
                 <div class="card-actions">
-                  <button class="btn-tab active">Harian</button>
-                  <button class="btn-tab">Mingguan</button>
+                  <span class="text-muted">mengikuti filter periode</span>
                 </div>
               </div>
               <div class="chart-placeholder">
-                <div class="chart-bars">
-                  <div class="bar-group" style="--h1:40%;--h2:35%"><div class="bar b1"></div><div class="bar b2"></div><span>1</span></div>
-                  <div class="bar-group" style="--h1:55%;--h2:45%"><div class="bar b1"></div><div class="bar b2"></div><span>2</span></div>
-                  <div class="bar-group" style="--h1:35%;--h2:50%"><div class="bar b1"></div><div class="bar b2"></div><span>3</span></div>
-                  <div class="bar-group" style="--h1:70%;--h2:55%"><div class="bar b1"></div><div class="bar b2"></div><span>4</span></div>
-                  <div class="bar-group" style="--h1:60%;--h2:65%"><div class="bar b1"></div><div class="bar b2"></div><span>5</span></div>
-                  <div class="bar-group" style="--h1:80%;--h2:60%"><div class="bar b1"></div><div class="bar b2"></div><span>6</span></div>
-                  <div class="bar-group" style="--h1:65%;--h2:70%"><div class="bar b1"></div><div class="bar b2"></div><span>7</span></div>
-                  <div class="bar-group" style="--h1:90%;--h2:75%"><div class="bar b1"></div><div class="bar b2"></div><span>8</span></div>
-                  <div class="bar-group" style="--h1:75%;--h2:80%"><div class="bar b1"></div><div class="bar b2"></div><span>9</span></div>
-                  <div class="bar-group" style="--h1:85%;--h2:70%"><div class="bar b1"></div><div class="bar b2"></div><span>10</span></div>
-                  <div class="bar-group" style="--h1:95%;--h2:85%"><div class="bar b1"></div><div class="bar b2"></div><span>11</span></div>
-                  <div class="bar-group" style="--h1:70%;--h2:90%"><div class="bar b1"></div><div class="bar b2"></div><span>12</span></div>
-                  <div class="bar-group" style="--h1:80%;--h2:65%"><div class="bar b1"></div><div class="bar b2"></div><span>13</span></div>
-                  <div class="bar-group" style="--h1:100%;--h2:80%"><div class="bar b1"></div><div class="bar b2"></div><span>14</span></div>
-                </div>
+                <div class="chart-bars" id="trendChart"></div>
                 <div class="chart-legend">
                   <span class="legend-item"><span class="dot dot-primary"></span> Revenue</span>
-                  <span class="legend-item"><span class="dot dot-secondary"></span> Bulan lalu</span>
+                  <span class="legend-item"><span class="dot dot-secondary"></span> Baseline</span>
                 </div>
               </div>
             </div>
 
             <div class="card chart-card">
-              <div class="card-header">
-                <h3>Channel Transaksi</h3>
-              </div>
+              <div class="card-header"><h3>Channel Transaksi</h3></div>
               <div class="donut-chart">
-                <svg viewBox="0 0 160 160" class="donut">
+                <svg viewBox="0 0 160 160" class="donut" id="donutSvg">
                   <circle cx="80" cy="80" r="60" fill="none" stroke="#E5E7EB" stroke-width="20"/>
-                  <circle cx="80" cy="80" r="60" fill="none" stroke="#4F46E5" stroke-width="20" stroke-dasharray="150.8 226.2" stroke-dashoffset="0" class="donut-segment"/>
-                  <circle cx="80" cy="80" r="60" fill="none" stroke="#10B981" stroke-width="20" stroke-dasharray="94.2 282.7" stroke-dashoffset="-150.8" class="donut-segment"/>
-                  <circle cx="80" cy="80" r="60" fill="none" stroke="#F59E0B" stroke-width="20" stroke-dasharray="56.5 320.4" stroke-dashoffset="-245" class="donut-segment"/>
-                  <circle cx="80" cy="80" r="60" fill="none" stroke="#8B5CF6" stroke-width="20" stroke-dasharray="37.7 339.3" stroke-dashoffset="-301.5" class="donut-segment"/>
-                  <text x="80" y="75" text-anchor="middle" class="donut-center-text">420</text>
+                  <text x="80" y="75" text-anchor="middle" class="donut-center-text" id="donutCenterText">0</text>
                   <text x="80" y="92" text-anchor="middle" class="donut-center-sub">transaksi</text>
                 </svg>
-                <div class="donut-legend">
-                  <div class="legend-row"><span class="dot" style="background:#4F46E5"></span>QRIS<span class="legend-val">40%</span></div>
-                  <div class="legend-row"><span class="dot" style="background:#10B981"></span>Marketplace<span class="legend-val">25%</span></div>
-                  <div class="legend-row"><span class="dot" style="background:#F59E0B"></span>Transfer<span class="legend-val">15%</span></div>
-                  <div class="legend-row"><span class="dot" style="background:#8B5CF6"></span>Manual<span class="legend-val">10%</span></div>
-                </div>
+                <div class="donut-legend" id="donutLegend"></div>
               </div>
             </div>
           </div>
@@ -313,88 +273,19 @@
             <div class="card">
               <div class="card-header">
                 <h3>Produk Terlaris</h3>
-                <a href="#" class="link-sm" onclick="showSection('analytics', document.querySelectorAll('.nav-item')[2])">Lihat semua</a>
+                <a href="#" class="link-sm" data-jump-section="analytics">Lihat semua</a>
               </div>
-              <div class="product-list">
-                <div class="product-item">
-                  <div class="product-rank">1</div>
-                  <div class="product-info">
-                    <span class="product-name">Nasi Bakar Ayam</span>
-                    <span class="product-count">142 terjual</span>
-                  </div>
-                  <div class="product-revenue">Rp 3.550.000</div>
-                  <div class="progress-bar"><div class="progress-fill" style="width:95%"></div></div>
-                </div>
-                <div class="product-item">
-                  <div class="product-rank">2</div>
-                  <div class="product-info">
-                    <span class="product-name">Nasi Bakar Ikan</span>
-                    <span class="product-count">98 terjual</span>
-                  </div>
-                  <div class="product-revenue">Rp 2.940.000</div>
-                  <div class="progress-bar"><div class="progress-fill" style="width:78%"></div></div>
-                </div>
-                <div class="product-item">
-                  <div class="product-rank">3</div>
-                  <div class="product-info">
-                    <span class="product-name">Es Teh Manis</span>
-                    <span class="product-count">210 terjual</span>
-                  </div>
-                  <div class="product-revenue">Rp 1.050.000</div>
-                  <div class="progress-bar"><div class="progress-fill" style="width:55%"></div></div>
-                </div>
-                <div class="product-item">
-                  <div class="product-rank">4</div>
-                  <div class="product-info">
-                    <span class="product-name">Jus Alpukat</span>
-                    <span class="product-count">87 terjual</span>
-                  </div>
-                  <div class="product-revenue">Rp 1.305.000</div>
-                  <div class="progress-bar"><div class="progress-fill" style="width:45%"></div></div>
-                </div>
-              </div>
+              <div class="product-list" id="topProductsList"></div>
             </div>
 
             <div class="card">
               <div class="card-header">
                 <h3>Rekomendasi AI</h3>
-                <span class="badge badge-purple">3 baru</span>
+                <span class="badge badge-purple" id="dashRecsBadge">0 baru</span>
               </div>
-              <div class="recommendation-list">
-                <div class="rec-item rec-high">
-                  <div class="rec-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor" width="16"><path d="M8 2a.75.75 0 01.75.75v4.5h4.5a.75.75 0 010 1.5h-4.5v4.5a.75.75 0 01-1.5 0v-4.5h-4.5a.75.75 0 010-1.5h4.5v-4.5A.75.75 0 018 2z"/></svg>
-                  </div>
-                  <div class="rec-content">
-                    <span class="rec-title">Tambah stok Ayam Bakar 20% di hari Jumat</span>
-                    <span class="rec-desc">Penjualan meningkat 23% setiap Jumat</span>
-                  </div>
-                  <span class="rec-priority high">Tinggi</span>
-                </div>
-                <div class="rec-item rec-medium">
-                  <div class="rec-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor" width="16"><path d="M8 15A7 7 0 108 1a7 7 0 000 14zm0-2A5 5 0 108 3a5 5 0 000 10z"/></svg>
-                  </div>
-                  <div class="rec-content">
-                    <span class="rec-title">Buka 30 menit lebih awal di hari Sabtu</span>
-                    <span class="rec-desc">Ada potensi 15 transaksi tambahan</span>
-                  </div>
-                  <span class="rec-priority medium">Sedang</span>
-                </div>
-                <div class="rec-item rec-low">
-                  <div class="rec-icon">
-                    <svg viewBox="0 0 16 16" fill="currentColor" width="16"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM7.25 8V4h1.5v4h-1.5zm0 3v-1.5h1.5V11h-1.5z"/></svg>
-                  </div>
-                  <div class="rec-content">
-                    <span class="rec-title">Pertimbangkan promo bundling minuman</span>
-                    <span class="rec-desc">68% pembeli nasi juga beli minuman</span>
-                  </div>
-                  <span class="rec-priority low">Rendah</span>
-                </div>
-              </div>
+              <div class="recommendation-list" id="dashRecsList"></div>
             </div>
           </div>
-
         </section>
 
         <!-- ===== TRANSACTIONS SECTION ===== -->
@@ -403,22 +294,23 @@
             <div class="filter-bar">
               <div class="search-box">
                 <svg viewBox="0 0 20 20" fill="currentColor" width="16"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
-                <input type="text" placeholder="Cari transaksi...">
+                <input type="text" id="searchTx" placeholder="Cari ID/produk...">
               </div>
-              <select class="filter-select">
-                <option>Semua Channel</option>
-                <option>QRIS</option>
-                <option>Marketplace</option>
-                <option>Transfer Bank</option>
-                <option>Manual</option>
+              <select class="filter-select" id="filterChannel">
+                <option value="all">Semua Channel</option>
+                <option value="qris">QRIS</option>
+                <option value="marketplace">Marketplace</option>
+                <option value="transfer">Transfer Bank</option>
+                <option value="manual">Manual / Cash</option>
+                <option value="pos">POS</option>
               </select>
-              <select class="filter-select">
-                <option>Semua Tipe</option>
-                <option>Penjualan</option>
-                <option>Refund</option>
+              <select class="filter-select" id="filterType">
+                <option value="all">Semua Tipe</option>
+                <option value="sale">Penjualan</option>
+                <option value="refund">Refund</option>
               </select>
             </div>
-            <button class="btn btn-primary btn-sm">
+            <button class="btn btn-primary btn-sm" id="addTxBtn">
               <svg viewBox="0 0 16 16" fill="currentColor" width="14"><path d="M8 2a.75.75 0 01.75.75v4.5h4.5a.75.75 0 010 1.5h-4.5v4.5a.75.75 0 01-1.5 0v-4.5h-4.5a.75.75 0 010-1.5h4.5v-4.5A.75.75 0 018 2z"/></svg>
               Tambah Transaksi
             </button>
@@ -428,83 +320,14 @@
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Tanggal</th>
-                  <th>Referensi</th>
-                  <th>Produk</th>
-                  <th>Channel</th>
-                  <th>Qty</th>
-                  <th>Amount</th>
-                  <th>Tipe</th>
+                  <th>Tanggal</th><th>Referensi</th><th>Produk</th><th>Channel</th><th>Qty</th><th>Amount</th><th>Tipe</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td><span class="text-primary">16 Mar 2026</span><br><span class="text-muted">12:30</span></td>
-                  <td class="text-mono">QRIS-20260316-001</td>
-                  <td>Nasi Bakar Ayam</td>
-                  <td><span class="channel-badge qris">QRIS</span></td>
-                  <td>2</td>
-                  <td class="text-right"><strong>Rp 50.000</strong></td>
-                  <td><span class="type-badge sale">Sale</span></td>
-                </tr>
-                <tr>
-                  <td><span class="text-primary">16 Mar 2026</span><br><span class="text-muted">12:15</span></td>
-                  <td class="text-mono">MP-SHPE-2026031</td>
-                  <td>Nasi Bakar Ikan</td>
-                  <td><span class="channel-badge marketplace">Marketplace</span></td>
-                  <td>1</td>
-                  <td class="text-right"><strong>Rp 30.000</strong></td>
-                  <td><span class="type-badge sale">Sale</span></td>
-                </tr>
-                <tr>
-                  <td><span class="text-primary">16 Mar 2026</span><br><span class="text-muted">11:48</span></td>
-                  <td class="text-mono">TRF-BCA-0316002</td>
-                  <td>Paket Catering x10</td>
-                  <td><span class="channel-badge transfer">Transfer</span></td>
-                  <td>1</td>
-                  <td class="text-right"><strong>Rp 350.000</strong></td>
-                  <td><span class="type-badge sale">Sale</span></td>
-                </tr>
-                <tr>
-                  <td><span class="text-primary">16 Mar 2026</span><br><span class="text-muted">11:20</span></td>
-                  <td class="text-mono">QRIS-20260316-002</td>
-                  <td>Es Teh Manis</td>
-                  <td><span class="channel-badge qris">QRIS</span></td>
-                  <td>3</td>
-                  <td class="text-right"><strong>Rp 15.000</strong></td>
-                  <td><span class="type-badge sale">Sale</span></td>
-                </tr>
-                <tr>
-                  <td><span class="text-primary">15 Mar 2026</span><br><span class="text-muted">19:30</span></td>
-                  <td class="text-mono">MNL-20260315-001</td>
-                  <td>Nasi Bakar Ayam</td>
-                  <td><span class="channel-badge manual">Manual</span></td>
-                  <td>1</td>
-                  <td class="text-right"><strong>Rp 25.000</strong></td>
-                  <td><span class="type-badge refund">Refund</span></td>
-                </tr>
-                <tr>
-                  <td><span class="text-primary">15 Mar 2026</span><br><span class="text-muted">18:45</span></td>
-                  <td class="text-mono">QRIS-20260315-015</td>
-                  <td>Jus Alpukat</td>
-                  <td><span class="channel-badge qris">QRIS</span></td>
-                  <td>2</td>
-                  <td class="text-right"><strong>Rp 30.000</strong></td>
-                  <td><span class="type-badge sale">Sale</span></td>
-                </tr>
-              </tbody>
+              <tbody id="transactionsBody"></tbody>
             </table>
             <div class="table-footer">
-              <span class="text-muted">Menampilkan 1-6 dari 420 transaksi</span>
-              <div class="pagination">
-                <button class="page-btn" disabled>&laquo;</button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <span class="page-dots">...</span>
-                <button class="page-btn">84</button>
-                <button class="page-btn">&raquo;</button>
-              </div>
+              <span class="text-muted" id="transactionsInfo">—</span>
+              <div class="pagination" id="transactionsPagination"></div>
             </div>
           </div>
         </section>
@@ -516,100 +339,21 @@
               <div class="card-header">
                 <h3>Jam Sibuk (Peak Hours)</h3>
                 <div class="card-actions">
-                  <span class="badge badge-green">Jam tersibuk: 12:00</span>
+                  <span class="badge badge-green" id="peakBadge">—</span>
                 </div>
               </div>
-              <div class="heatmap-container">
-                <div class="heatmap-row">
-                  <span class="heatmap-label">Sen</span>
-                  <div class="heatmap-cell l1"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l4"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                </div>
-                <div class="heatmap-row">
-                  <span class="heatmap-label">Sel</span>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l5"></div>
-                  <div class="heatmap-cell l4"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l1"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                </div>
-                <div class="heatmap-row">
-                  <span class="heatmap-label">Rab</span>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l4"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l1"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                </div>
-                <div class="heatmap-row">
-                  <span class="heatmap-label">Kam</span>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div>
-                  <div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                </div>
-                <div class="heatmap-row">
-                  <span class="heatmap-label">Jum</span>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l5"></div>
-                  <div class="heatmap-cell l5"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l5"></div><div class="heatmap-cell l4"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l0"></div>
-                </div>
-                <div class="heatmap-row">
-                  <span class="heatmap-label">Sab</span>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l3"></div>
-                  <div class="heatmap-cell l4"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l5"></div>
-                  <div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l3"></div><div class="heatmap-cell l2"></div>
-                  <div class="heatmap-cell l3"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l4"></div><div class="heatmap-cell l3"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                </div>
-                <div class="heatmap-row">
-                  <span class="heatmap-label">Min</span>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l3"></div>
-                  <div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l1"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l1"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l2"></div><div class="heatmap-cell l1"></div>
-                  <div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div><div class="heatmap-cell l0"></div>
-                </div>
-                <div class="heatmap-hours">
-                  <span>00</span><span>02</span><span>04</span><span>06</span><span>08</span><span>10</span><span>12</span><span>14</span><span>16</span><span>18</span><span>20</span><span>22</span>
-                </div>
-              </div>
+              <div class="heatmap-container" id="heatmapContainer"></div>
             </div>
           </div>
 
           <div class="charts-row">
             <div class="card">
               <div class="card-header"><h3>Performa Produk</h3></div>
-              <div class="horizontal-bars">
-                <div class="hbar"><span class="hbar-label">Nasi Bakar Ayam</span><div class="hbar-track"><div class="hbar-fill" style="width:95%;background:#4F46E5"></div></div><span class="hbar-val">Rp 3.55jt</span></div>
-                <div class="hbar"><span class="hbar-label">Nasi Bakar Ikan</span><div class="hbar-track"><div class="hbar-fill" style="width:78%;background:#4F46E5"></div></div><span class="hbar-val">Rp 2.94jt</span></div>
-                <div class="hbar"><span class="hbar-label">Es Teh Manis</span><div class="hbar-track"><div class="hbar-fill" style="width:55%;background:#10B981"></div></div><span class="hbar-val">Rp 1.05jt</span></div>
-                <div class="hbar"><span class="hbar-label">Jus Alpukat</span><div class="hbar-track"><div class="hbar-fill" style="width:45%;background:#10B981"></div></div><span class="hbar-val">Rp 1.30jt</span></div>
-                <div class="hbar"><span class="hbar-label">Paket Catering</span><div class="hbar-track"><div class="hbar-fill" style="width:68%;background:#F59E0B"></div></div><span class="hbar-val">Rp 2.10jt</span></div>
-              </div>
+              <div class="horizontal-bars" id="productPerfList"></div>
             </div>
             <div class="card">
               <div class="card-header"><h3>Revenue per Channel</h3></div>
-              <div class="horizontal-bars">
-                <div class="hbar"><span class="hbar-label">QRIS</span><div class="hbar-track"><div class="hbar-fill" style="width:90%;background:#4F46E5"></div></div><span class="hbar-val">Rp 6.30jt</span></div>
-                <div class="hbar"><span class="hbar-label">Marketplace</span><div class="hbar-track"><div class="hbar-fill" style="width:65%;background:#10B981"></div></div><span class="hbar-val">Rp 3.94jt</span></div>
-                <div class="hbar"><span class="hbar-label">Transfer Bank</span><div class="hbar-track"><div class="hbar-fill" style="width:50%;background:#F59E0B"></div></div><span class="hbar-val">Rp 2.36jt</span></div>
-                <div class="hbar"><span class="hbar-label">Manual / Cash</span><div class="hbar-track"><div class="hbar-fill" style="width:35%;background:#8B5CF6"></div></div><span class="hbar-val">Rp 1.58jt</span></div>
-                <div class="hbar"><span class="hbar-label">POS</span><div class="hbar-track"><div class="hbar-fill" style="width:25%;background:#EF4444"></div></div><span class="hbar-val">Rp 1.57jt</span></div>
-              </div>
+              <div class="horizontal-bars" id="channelRevenueList"></div>
             </div>
           </div>
         </section>
@@ -621,115 +365,35 @@
               <svg viewBox="0 0 200 200" class="score-ring">
                 <circle cx="100" cy="100" r="85" fill="none" stroke="#E5E7EB" stroke-width="12"/>
                 <circle cx="100" cy="100" r="85" fill="none" stroke="#4F46E5" stroke-width="12"
-                  stroke-dasharray="418.88" stroke-dashoffset="90" stroke-linecap="round"
+                  stroke-dasharray="534" stroke-dashoffset="100" stroke-linecap="round"
                   transform="rotate(-90 100 100)" class="score-arc"/>
-                <text x="100" y="90" text-anchor="middle" class="score-big">78.5</text>
+                <text x="100" y="90" text-anchor="middle" class="score-big" id="healthBigScore">0</text>
                 <text x="100" y="115" text-anchor="middle" class="score-label">dari 100</text>
-                <text x="100" y="138" text-anchor="middle" class="score-grade">B+</text>
+                <text x="100" y="138" text-anchor="middle" class="score-grade" id="healthGrade">—</text>
               </svg>
             </div>
             <div class="health-summary">
               <h3>Business Health Score</h3>
-              <p>Skor kesehatan bisnis Anda berdasarkan analisis 30 hari terakhir. Skor ini menggabungkan 5 komponen utama kesehatan bisnis.</p>
+              <p>Skor kesehatan bisnis berdasarkan data transaksi periode terpilih. Skor terdiri dari 5 komponen dengan bobot tertimbang sesuai metodologi PULSA.</p>
               <div class="health-meta">
-                <span>Periode: 16 Feb - 16 Mar 2026</span>
-                <span>Terakhir dihitung: 16 Mar 2026, 10:00 WIB</span>
+                <span id="healthMetaPeriod">Periode: —</span>
+                <span id="healthMetaCalc">Terakhir dihitung: —</span>
+              </div>
+              <div class="health-actions">
+                <button class="btn btn-outline btn-sm" id="shareScoreBtn">
+                  <svg viewBox="0 0 16 16" fill="currentColor" width="14"><path d="M11 2.5a2.5 2.5 0 11.346 1.27l-3.4 1.7a2.5 2.5 0 010 1.06l3.4 1.7a2.5 2.5 0 11-.448.897l-3.4-1.7a2.5 2.5 0 110-2.854l3.4-1.7A2.5 2.5 0 0111 2.5z"/></svg>
+                  Bagikan Skor
+                </button>
               </div>
             </div>
           </div>
 
-          <div class="health-components">
-            <div class="health-comp-card">
-              <div class="comp-header">
-                <span class="comp-name">Revenue Stability</span>
-                <span class="comp-score">82.0</span>
-              </div>
-              <div class="comp-bar"><div class="comp-fill" style="width:82%;background:#10B981"></div></div>
-              <p class="comp-desc">Konsistensi pendapatan harian Anda stabil.</p>
-            </div>
-            <div class="health-comp-card">
-              <div class="comp-header">
-                <span class="comp-name">Transaction Frequency</span>
-                <span class="comp-score">75.0</span>
-              </div>
-              <div class="comp-bar"><div class="comp-fill" style="width:75%;background:#F59E0B"></div></div>
-              <p class="comp-desc">Frekuensi transaksi cukup baik, bisa ditingkatkan.</p>
-            </div>
-            <div class="health-comp-card">
-              <div class="comp-header">
-                <span class="comp-name">Customer Diversity</span>
-                <span class="comp-score">68.0</span>
-              </div>
-              <div class="comp-bar"><div class="comp-fill" style="width:68%;background:#F59E0B"></div></div>
-              <p class="comp-desc">Diversifikasi pelanggan perlu ditingkatkan.</p>
-            </div>
-            <div class="health-comp-card">
-              <div class="comp-header">
-                <span class="comp-name">Channel Diversity</span>
-                <span class="comp-score">85.0</span>
-              </div>
-              <div class="comp-bar"><div class="comp-fill" style="width:85%;background:#10B981"></div></div>
-              <p class="comp-desc">Penggunaan multi-channel sangat baik.</p>
-            </div>
-            <div class="health-comp-card">
-              <div class="comp-header">
-                <span class="comp-name">Growth Trend</span>
-                <span class="comp-score">82.5</span>
-              </div>
-              <div class="comp-bar"><div class="comp-fill" style="width:82.5%;background:#10B981"></div></div>
-              <p class="comp-desc">Tren pertumbuhan positif dan konsisten.</p>
-            </div>
-          </div>
+          <div class="health-components" id="healthComponents"></div>
         </section>
 
         <!-- ===== RECOMMENDATIONS SECTION ===== -->
         <section id="section-recommendations" class="content-section">
-          <div class="rec-full-list">
-            <div class="rec-full-item">
-              <div class="rec-full-left">
-                <span class="rec-type-badge stock">Stok</span>
-                <div>
-                  <h4>Tambah stok Ayam Bakar 20% di hari Jumat</h4>
-                  <p>Berdasarkan data 4 minggu terakhir, penjualan Ayam Bakar meningkat rata-rata 23% setiap Jumat dibanding hari biasa. Menambah stok bisa mengurangi potensi stockout.</p>
-                  <span class="rec-meta">Berlaku hingga 23 Mar 2026</span>
-                </div>
-              </div>
-              <span class="rec-priority high">Tinggi</span>
-            </div>
-            <div class="rec-full-item">
-              <div class="rec-full-left">
-                <span class="rec-type-badge operational">Operasional</span>
-                <div>
-                  <h4>Buka 30 menit lebih awal di hari Sabtu</h4>
-                  <p>Analisis peak hours menunjukkan ada cluster transaksi pada jam 07:30-08:00 di Sabtu yang saat ini tidak terlayani. Estimasi tambahan 15 transaksi per Sabtu.</p>
-                  <span class="rec-meta">Berlaku hingga 30 Mar 2026</span>
-                </div>
-              </div>
-              <span class="rec-priority medium">Sedang</span>
-            </div>
-            <div class="rec-full-item">
-              <div class="rec-full-left">
-                <span class="rec-type-badge promotion">Promosi</span>
-                <div>
-                  <h4>Bundling: Nasi Bakar + Minuman diskon 10%</h4>
-                  <p>68% pembeli Nasi Bakar juga memesan minuman. Bundling promo bisa meningkatkan average transaction value sebesar Rp 3.000-5.000 per transaksi.</p>
-                  <span class="rec-meta">Berlaku hingga 30 Mar 2026</span>
-                </div>
-              </div>
-              <span class="rec-priority low">Rendah</span>
-            </div>
-            <div class="rec-full-item">
-              <div class="rec-full-left">
-                <span class="rec-type-badge stock">Stok</span>
-                <div>
-                  <h4>Kurangi stok Es Teh di hari Minggu</h4>
-                  <p>Penjualan Es Teh menurun 40% di hari Minggu dibanding weekday. Mengurangi prep bisa menghemat bahan baku.</p>
-                  <span class="rec-meta">Berlaku hingga 23 Mar 2026</span>
-                </div>
-              </div>
-              <span class="rec-priority low">Rendah</span>
-            </div>
-          </div>
+          <div class="rec-full-list" id="recsFullList"></div>
         </section>
 
         <!-- ===== INGESTION SECTION ===== -->
@@ -746,68 +410,49 @@
                   </svg>
                 </div>
                 <p class="upload-text"><strong>Klik atau drag file</strong> untuk upload</p>
-                <p class="upload-sub">CSV, XLSX, XLS (Max 50MB)</p>
+                <p class="upload-sub">CSV, XLSX, XLS (Max 50MB) — atau klik tanpa file untuk simulasi</p>
+                <input type="file" id="uploadFileInput" accept=".csv,.xlsx,.xls" hidden>
               </div>
               <div class="upload-options">
                 <div class="form-group">
                   <label>Channel sumber</label>
-                  <select>
-                    <option>QRIS</option>
-                    <option>POS</option>
-                    <option>Marketplace - Shopee</option>
-                    <option>Marketplace - Tokopedia</option>
-                    <option>Transfer Bank</option>
+                  <select id="uploadChannel">
+                    <option value="qris">QRIS</option>
+                    <option value="pos">POS</option>
+                    <option value="marketplace">Marketplace</option>
+                    <option value="transfer">Transfer Bank</option>
                   </select>
                 </div>
-                <button class="btn btn-primary btn-full">Upload & Proses</button>
+                <button class="btn btn-primary btn-full" id="uploadSubmitBtn">Upload &amp; Proses</button>
               </div>
             </div>
 
             <div class="card ingestion-card">
               <div class="card-header"><h3>Input Manual</h3></div>
-              <form class="manual-form">
+              <form class="manual-form" id="manualForm">
                 <div class="form-group">
                   <label>Produk</label>
-                  <select>
-                    <option>Nasi Bakar Ayam</option>
-                    <option>Nasi Bakar Ikan</option>
-                    <option>Es Teh Manis</option>
-                    <option>Jus Alpukat</option>
-                  </select>
+                  <select id="manualProductSelect" required></select>
                 </div>
                 <div class="form-row-2">
-                  <div class="form-group">
-                    <label>Jumlah (Rp)</label>
-                    <input type="number" placeholder="0" value="25000">
-                  </div>
-                  <div class="form-group">
-                    <label>Qty</label>
-                    <input type="number" placeholder="1" value="1">
-                  </div>
+                  <div class="form-group"><label>Jumlah (Rp)</label><input type="number" id="manualAmount" placeholder="0" value="25000" required></div>
+                  <div class="form-group"><label>Qty</label><input type="number" id="manualQty" placeholder="1" value="1" min="1" required></div>
                 </div>
                 <div class="form-row-2">
-                  <div class="form-group">
-                    <label>Tanggal</label>
-                    <input type="date" value="2026-03-16">
-                  </div>
-                  <div class="form-group">
-                    <label>Waktu</label>
-                    <input type="time" value="12:30">
-                  </div>
+                  <div class="form-group"><label>Tanggal</label><input type="date" id="manualDate" required></div>
+                  <div class="form-group"><label>Waktu</label><input type="time" id="manualTime" value="12:30" required></div>
                 </div>
                 <div class="form-group">
                   <label>Channel</label>
-                  <select>
-                    <option>Manual / Cash</option>
-                    <option>QRIS</option>
-                    <option>Transfer Bank</option>
+                  <select id="manualChannel">
+                    <option value="manual">Manual / Cash</option>
+                    <option value="qris">QRIS</option>
+                    <option value="transfer">Transfer Bank</option>
+                    <option value="pos">POS</option>
                   </select>
                 </div>
-                <div class="form-group">
-                  <label>Catatan (opsional)</label>
-                  <input type="text" placeholder="e.g. pelanggan reguler">
-                </div>
-                <button type="button" class="btn btn-primary btn-full">Simpan Transaksi</button>
+                <div class="form-group"><label>Catatan (opsional)</label><input type="text" id="manualNote" placeholder="contoh: pelanggan reguler"></div>
+                <button type="submit" class="btn btn-primary btn-full">Simpan Transaksi</button>
               </form>
             </div>
           </div>
@@ -816,45 +461,9 @@
             <div class="card-header"><h3>Riwayat Import</h3></div>
             <table class="data-table">
               <thead>
-                <tr>
-                  <th>Tanggal</th>
-                  <th>File</th>
-                  <th>Channel</th>
-                  <th>Status</th>
-                  <th>Rows</th>
-                  <th>Berhasil</th>
-                  <th>Gagal</th>
-                </tr>
+                <tr><th>Tanggal</th><th>File</th><th>Channel</th><th>Status</th><th>Rows</th><th>Berhasil</th><th>Gagal</th></tr>
               </thead>
-              <tbody>
-                <tr>
-                  <td>16 Mar 2026</td>
-                  <td class="text-mono">transaksi_maret.csv</td>
-                  <td><span class="channel-badge qris">QRIS</span></td>
-                  <td><span class="status-badge success">Selesai</span></td>
-                  <td>1.500</td>
-                  <td class="text-success">1.487</td>
-                  <td class="text-danger">13</td>
-                </tr>
-                <tr>
-                  <td>10 Mar 2026</td>
-                  <td class="text-mono">shopee_feb2026.xlsx</td>
-                  <td><span class="channel-badge marketplace">Marketplace</span></td>
-                  <td><span class="status-badge success">Selesai</span></td>
-                  <td>832</td>
-                  <td class="text-success">832</td>
-                  <td class="text-danger">0</td>
-                </tr>
-                <tr>
-                  <td>1 Mar 2026</td>
-                  <td class="text-mono">bca_statement.csv</td>
-                  <td><span class="channel-badge transfer">Transfer</span></td>
-                  <td><span class="status-badge processing">Proses...</span></td>
-                  <td>245</td>
-                  <td class="text-muted">-</td>
-                  <td class="text-muted">-</td>
-                </tr>
-              </tbody>
+              <tbody id="importHistoryBody"></tbody>
             </table>
           </div>
         </section>
@@ -863,34 +472,50 @@
     </div>
   </div>
 
+  <!-- Goal Dialog -->
+  <div id="goalDialog" class="dialog-overlay">
+    <div class="dialog-card">
+      <div class="dialog-header">
+        <h3>Setel Target Bisnis</h3>
+        <p class="text-muted">Rekomendasi AI akan disesuaikan dengan target Anda.</p>
+      </div>
+      <form id="goalForm" class="dialog-body">
+        <div class="form-group">
+          <label>Target kenaikan omzet (% / bulan)</label>
+          <input type="number" id="goalUplift" min="1" max="100" value="10" required>
+        </div>
+        <div class="form-group">
+          <label>Produk yang ingin didorong</label>
+          <select id="goalProductSelect" required></select>
+        </div>
+        <div class="form-group">
+          <label>Horizon waktu (hari)</label>
+          <select id="goalHorizon">
+            <option value="14">14 hari</option>
+            <option value="30" selected>30 hari</option>
+            <option value="60">60 hari</option>
+            <option value="90">90 hari</option>
+          </select>
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="btn btn-outline" id="goalClearBtn" style="display:none;">Hapus Target</button>
+          <button type="button" class="btn btn-outline" id="goalCancelBtn">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Target</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="app.js"></script>
   <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-    }
-
-    function handleLogin(e) {
-      e.preventDefault();
-      showPage('page-app');
-    }
-
-    function showSection(sectionId, navItem) {
-      document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-      document.getElementById('section-' + sectionId).classList.add('active');
-
-      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-      if (navItem) navItem.classList.add('active');
-
-      const titles = {
-        'dashboard': 'Dashboard',
-        'transactions': 'Transaksi',
-        'analytics': 'Analytics',
-        'health-score': 'Health Score',
-        'recommendations': 'Rekomendasi AI',
-        'ingestion': 'Import Data'
-      };
-      document.getElementById('pageTitle').textContent = titles[sectionId] || 'Dashboard';
-    }
+    // Set default date on manual form to today
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('manualDate');
+      if (dateInput) dateInput.value = new Date().toISOString().slice(0, 10);
+    });
   </script>
 </body>
 </html>
